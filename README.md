@@ -1,4 +1,4 @@
-# camelize-object-keys
+# camelize-object-keys [![Build Status](https://travis-ci.org/gin0606/camelize-object-keys.svg?branch=master)](https://travis-ci.org/gin0606/camelize-object-keys)
 Converts object keys to UpperCamelCase.
 
 ## Installation
