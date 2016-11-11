@@ -4,23 +4,23 @@ import camelizeKeys from '../src/camelizeKeys'
 describe('#camelizeKeys', () => {
   context('with object', () => {
     const o = {
-      hoge1: 'hoge_value',
-      hoge2: 'hoge_value',
+      hoge1: true,
+      hoge2: false,
       hoge3: {
         fuga1: 'fuga_value',
         fuga2: {
-          hoge_fuga: 'hoge'
+          hoge_fuga: 100
         }
       }
     }
     context('when `uppercaseFirstLetter` is true', () => {
       const expected = {
-        Hoge1: 'hoge_value',
-        Hoge2: 'hoge_value',
+        Hoge1: true,
+        Hoge2: false,
         Hoge3: {
           Fuga1: 'fuga_value',
           Fuga2: {
-            HogeFuga: 'hoge'
+            HogeFuga: 100
           }
         }
       }
@@ -32,12 +32,12 @@ describe('#camelizeKeys', () => {
 
     context('when `uppercaseFirstLetter` is false', () => {
       const expected = {
-        hoge1: 'hoge_value',
-        hoge2: 'hoge_value',
+        hoge1: true,
+        hoge2: false,
         hoge3: {
           fuga1: 'fuga_value',
           fuga2: {
-            hogeFuga: 'hoge'
+            hogeFuga: 100
           }
         }
       }
