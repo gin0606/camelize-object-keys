@@ -8,8 +8,8 @@ npm install --save camelize-object-keys
 
 ## Usage
 ```js
-import camelizeKeys from 'camelize-object-keys'
+import { CamelizeKeys, camelizeKeys } from '../src/camelizeKeys'
 
-camelizeKeys({ hoge_fuga: 'fuga', fuga: { baa: 'aaa' }}) # => { HogeFuga: 'fuga', Fuga: { Baa: 'aaa' }}
-camelizeKeys({ hoge_fuga: 'fuga', fuga: { baa: 'aaa' }}, false) # => { hogeFuga: 'fuga', fuga: { baa: 'aaa' }}
+CamelizeKeys({ hoge_fuga: 'fuga', fuga: { baa: 'aaa' }}) # => { HogeFuga: 'fuga', Fuga: { Baa: 'aaa' }}
+camelizeKeys({ hoge_fuga: 'fuga', fuga: { baa: 'aaa' }}) # => { hogeFuga: 'fuga', fuga: { baa: 'aaa' }}
 ```
