@@ -1,6 +1,7 @@
-extends: standard
+extends: airbnb
 env:
   mocha: true
 plugins:
-  - standard
-  - promise
+  - react
+  - jsx-a11y
+  - import
