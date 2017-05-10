@@ -1,4 +1,4 @@
-import assert from 'power-assert';
+import assert from 'assert';
 import { CamelizeKeys, camelizeKeys } from '../src/camelizeKeys';
 
 describe('#camelize-object-keys', () => {
@@ -41,6 +41,25 @@ describe('#camelize-object-keys', () => {
         assert.deepEqual(CamelizeKeys(['hoge', 'fuga']), ['hoge', 'fuga']);
       });
     });
+
+    context('with object array', () => {
+      const expected = [
+        {
+          Hoge1: true,
+          Hoge2: false,
+          Hoge3: {
+            Fuga1: 'fuga_value',
+            Fuga2: {
+              HogeFuga: 100,
+            },
+          },
+        },
+      ];
+      it('returns UpperCamelCase key object array', () => {
+        const camelizedObject = CamelizeKeys([o]);
+        assert.deepEqual(camelizedObject, expected);
+      });
+    });
   });
 
   describe('#camelizeKeys', () => {
@@ -70,6 +89,25 @@ describe('#camelize-object-keys', () => {
     context('with array', () => {
       it('does not change array', () => {
         assert.deepEqual(camelizeKeys(['hoge', 'fuga']), ['hoge', 'fuga']);
+      });
+    });
+
+    context('with object array', () => {
+      const expected = [
+        {
+          hoge1: true,
+          hoge2: false,
+          hoge3: {
+            fuga1: 'fuga_value',
+            fuga2: {
+              hogeFuga: 100,
+            },
+          },
+        },
+      ];
+      it('returns UpperCamelCase key object array', () => {
+        const camelizedObject = camelizeKeys([o]);
+        assert.deepEqual(camelizedObject, expected);
       });
     });
   });

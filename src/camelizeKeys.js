@@ -6,6 +6,9 @@ function isObject(o) {
 }
 
 function camelize(o, uppercaseFirstLetter) {
+  if (Array.isArray(o)) {
+    return o.map(e => camelize(e, uppercaseFirstLetter));
+  }
   if (!isObject(o)) { return o; }
   const f = uppercaseFirstLetter ? s => (upperFirst(camelCase(s))) : camelCase;
   return Object.keys(o).reduce((result, key) => {
